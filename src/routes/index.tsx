@@ -1,7 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
-import pillowHero from "@/assets/pillow-hero.png.asset.json";
 import pillowAngled from "@/assets/pillow-angled.png.asset.json";
 import pillowLifestyle from "@/assets/pillow-lifestyle.jpg.asset.json";
+import pillowLifestyle2 from "@/assets/pillow-lifestyle-2.jpg.asset.json";
+import pillowLifestyle3 from "@/assets/pillow-lifestyle-3.jpg.asset.json";
+import pillowLifestyle4 from "@/assets/pillow-lifestyle-4.jpg.asset.json";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+
+function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") { setShown(true); return; }
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setShown(true)),
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 ease-out ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: Index,
