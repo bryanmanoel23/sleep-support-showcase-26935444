@@ -312,7 +312,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-5 md:items-center md:py-20">
           <Reveal className="md:col-span-2">
             <img
-              src={pillowLifestyle2.url}
+              src={pillowLifestyleNew.url}
               alt="Person resting on the ergonomic memory foam pillow"
               className="mx-auto w-full max-w-sm rounded-3xl object-cover shadow-[var(--shadow-card)]"
               loading="lazy"
