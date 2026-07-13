@@ -4,6 +4,7 @@ import pillowLifestyle from "@/assets/pillow-lifestyle.jpg.asset.json";
 import pillowLifestyle2 from "@/assets/pillow-lifestyle-2.jpg.asset.json";
 import pillowLifestyle3 from "@/assets/pillow-lifestyle-3.jpg.asset.json";
 import pillowLifestyle4 from "@/assets/pillow-lifestyle-4.jpg.asset.json";
+import pillowLifestyleNew from "@/assets/pillow-lifestyle-new.jpg.asset.json";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
@@ -311,7 +312,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-5 md:items-center md:py-20">
           <Reveal className="md:col-span-2">
             <img
-              src={pillowLifestyle2.url}
+              src={pillowLifestyleNew.url}
               alt="Person resting on the ergonomic memory foam pillow"
               className="mx-auto w-full max-w-sm rounded-3xl object-cover shadow-[var(--shadow-card)]"
               loading="lazy"
