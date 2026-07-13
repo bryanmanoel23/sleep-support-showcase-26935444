@@ -204,13 +204,15 @@ function Index() {
       {/* Specs */}
       <section className="bg-secondary/40">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:py-20">
-          <img
-            src={pillowAngled.url}
-            alt="Angled view of the memory foam pillow showing contoured surface and cooling mesh side panels"
-            className="mx-auto w-full max-w-md rounded-2xl"
-            loading="lazy"
-          />
-          <div>
+          <Reveal>
+            <img
+              src={pillowLifestyle3.url}
+              alt="Contoured memory foam pillow with cooling cover on a bed"
+              className="mx-auto w-full max-w-md rounded-3xl object-cover shadow-[var(--shadow-card)]"
+              loading="lazy"
+            />
+          </Reveal>
+          <Reveal delay={120}>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What it's made of</h2>
             <p className="mt-4 text-muted-foreground">
               A memory foam pillow for neck and shoulder support lives or dies by its materials and shape. Here's what
@@ -230,7 +232,30 @@ function Index() {
                 </div>
               ))}
             </dl>
-          </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">A closer look</h2>
+          <p className="mt-4 text-muted-foreground">
+            Real photos of the ergonomic pillow — contoured shape, cooling cover, and how it sits on a standard bed.
+          </p>
+        </Reveal>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { src: pillowLifestyle4.url, alt: "Memory foam pillow shown from the front on a bed" },
+            { src: pillowLifestyle.url, alt: "Person holding the ergonomic memory foam pillow in bed" },
+            { src: pillowLifestyle2.url, alt: "Person resting on the contoured memory foam pillow" },
+          ].map((img, i) => (
+            <Reveal key={img.src} delay={i * 100}>
+              <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-secondary/40">
+                <img src={img.src} alt={img.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
