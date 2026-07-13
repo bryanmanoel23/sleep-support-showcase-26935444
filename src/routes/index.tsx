@@ -133,49 +133,71 @@ function Index() {
 
       {/* Is this right for you */}
       <section id="review" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Is this pillow right for you?</h2>
           <p className="mt-4 text-muted-foreground">
             Not every pillow suits every sleeper. Here's an honest look at who this ergonomic pillow for neck support
             tends to work for — and who might want to look elsewhere.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <Card className="border-l-4 border-l-[var(--success)]">
-            <h3 className="text-lg font-semibold">Likely a good fit if you…</h3>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              {[
-                "Sleep mostly on your side and want dedicated shoulder space",
-                "Wake up with a stiff neck from a flat or overly soft pillow",
-                "Prefer firmer, structured support over a plush feel",
-                "Sleep hot and want a breathable cooling cover",
-                "Switch between side and back positions during the night",
-              ].map((t) => (
-                <li key={t} className="flex gap-2">
-                  <span aria-hidden className="mt-0.5 text-[var(--success)]">✓</span>
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </Card>
-          <Card className="border-l-4 border-l-[var(--warning)]">
-            <h3 className="text-lg font-semibold">Probably not for you if you…</h3>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              {[
-                "Prefer a soft, sink-in down or down-alternative feel",
-                "Sleep mostly on your stomach and want a very low profile",
-                "Dislike the initial scent that memory foam can have out of the box",
-                "Want a large, standard-rectangle pillow for reading in bed",
-                "Are looking for a very lightweight travel pillow",
-              ].map((t) => (
-                <li key={t} className="flex gap-2">
-                  <span aria-hidden className="mt-0.5 text-[var(--warning)]">–</span>
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </Card>
+          <Reveal>
+            <div className="h-full overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
+              <div className="flex items-center gap-3 border-b border-border bg-[color-mix(in_oklab,var(--success)_10%,var(--card))] px-6 py-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--success)] text-primary-foreground shadow-sm">
+                  <svg viewBox="0 0 20 20" fill="none" className="h-5 w-5" aria-hidden>
+                    <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+                <h3 className="text-lg font-semibold">Likely a good fit if you…</h3>
+              </div>
+              <ul className="divide-y divide-border">
+                {[
+                  "Sleep mostly on your side and want dedicated shoulder space",
+                  "Wake up with a stiff neck from a flat or overly soft pillow",
+                  "Prefer firmer, structured support over a plush feel",
+                  "Sleep hot and want a breathable cooling cover",
+                  "Switch between side and back positions during the night",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3 px-6 py-3.5 text-sm">
+                    <span aria-hidden className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_oklab,var(--success)_20%,transparent)] text-[var(--success)]">
+                      <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3"><path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </span>
+                    <span className="text-foreground/80">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="h-full overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
+              <div className="flex items-center gap-3 border-b border-border bg-[color-mix(in_oklab,var(--warning)_10%,var(--card))] px-6 py-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--warning)] text-primary-foreground shadow-sm">
+                  <svg viewBox="0 0 20 20" fill="none" className="h-5 w-5" aria-hidden>
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>
+                  </svg>
+                </span>
+                <h3 className="text-lg font-semibold">Probably not for you if you…</h3>
+              </div>
+              <ul className="divide-y divide-border">
+                {[
+                  "Prefer a soft, sink-in down or down-alternative feel",
+                  "Sleep mostly on your stomach and want a very low profile",
+                  "Dislike the initial scent that memory foam can have out of the box",
+                  "Want a large, standard-rectangle pillow for reading in bed",
+                  "Are looking for a very lightweight travel pillow",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3 px-6 py-3.5 text-sm">
+                    <span aria-hidden className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_oklab,var(--warning)_20%,transparent)] text-[var(--warning)]">
+                      <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg>
+                    </span>
+                    <span className="text-foreground/80">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
 
