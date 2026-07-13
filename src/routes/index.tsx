@@ -4,6 +4,7 @@ import pillowLifestyle from "@/assets/pillow-lifestyle.jpg.asset.json";
 import pillowLifestyle2 from "@/assets/pillow-lifestyle-2.jpg.asset.json";
 import pillowLifestyle3 from "@/assets/pillow-lifestyle-3.jpg.asset.json";
 import pillowLifestyle4 from "@/assets/pillow-lifestyle-4.jpg.asset.json";
+import pillowLifestyleNew from "@/assets/pillow-lifestyle-new.jpg.asset.json";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
