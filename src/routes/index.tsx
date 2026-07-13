@@ -83,7 +83,7 @@ function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[var(--primary-soft)] to-background" />
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:py-24">
-          <div>
+          <Reveal>
             <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
               Honest Independent Review
             </span>
@@ -91,8 +91,7 @@ function Index() {
               Ergonomic Pillow for Neck Support: An Honest Review for Side Sleepers
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
-              A closer look at a contoured memory foam pillow designed for neck and shoulder support — with a cooling
-              cover aimed at side sleepers who wake up stiff or sore.
+              A contoured memory foam pillow built for side sleepers who wake up stiff.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <CTA />
@@ -101,18 +100,18 @@ function Index() {
               </a>
             </div>
             <p className="mt-4 text-xs text-muted-foreground">
-              [See current price on official page] • 60-day return window
+              Check today's price on the official page • 60-day return window
             </p>
-          </div>
-          <div className="relative">
+          </Reveal>
+          <Reveal delay={120} className="relative">
             <div className="absolute inset-0 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
             <img
-              src={pillowHero.url}
+              src={pillowAngled.url}
               alt="Ergonomic memory foam pillow with contoured shape and cooling cover"
               className="mx-auto w-full max-w-lg drop-shadow-2xl"
               loading="eager"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
