@@ -261,15 +261,15 @@ function Index() {
 
       {/* Pros and cons */}
       <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Honest pros and cons</h2>
           <p className="mt-4 text-muted-foreground">
             No pillow is perfect. Here's a balanced look — including the real trade-offs you should know about before
             buying.
           </p>
-        </div>
+        </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <Card>
+          <Reveal><Card>
             <h3 className="text-lg font-semibold">Pros</h3>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               {[
@@ -285,8 +285,8 @@ function Index() {
                 </li>
               ))}
             </ul>
-          </Card>
-          <Card>
+          </Card></Reveal>
+          <Reveal delay={120}><Card>
             <h3 className="text-lg font-semibold">Cons & trade-offs</h3>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               {[
@@ -302,20 +302,22 @@ function Index() {
                 </li>
               ))}
             </ul>
-          </Card>
+          </Card></Reveal>
         </div>
       </section>
 
       {/* Lifestyle + CTA break */}
       <section className="bg-[var(--primary-soft)]">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-5 md:items-center md:py-20">
-          <img
-            src={pillowLifestyle.url}
-            alt="Person holding an ergonomic memory foam pillow while sitting on a bed"
-            className="mx-auto w-full max-w-sm rounded-3xl object-cover md:col-span-2"
-            loading="lazy"
-          />
-          <div className="md:col-span-3">
+          <Reveal className="md:col-span-2">
+            <img
+              src={pillowLifestyle2.url}
+              alt="Person resting on the ergonomic memory foam pillow"
+              className="mx-auto w-full max-w-sm rounded-3xl object-cover shadow-[var(--shadow-card)]"
+              loading="lazy"
+            />
+          </Reveal>
+          <Reveal delay={120} className="md:col-span-3">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               A cooling pillow built with side sleepers in mind
             </h2>
@@ -327,17 +329,19 @@ function Index() {
             <div className="mt-6">
               <CTA>Check Availability</CTA>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-4 py-16 md:py-20">
-        <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Frequently asked questions</h2>
+        <Reveal>
+          <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Frequently asked questions</h2>
         <p className="mt-3 text-center text-sm text-muted-foreground">
           This content is for general informational purposes only and is not medical advice. If you have persistent neck
           pain, please speak with a qualified healthcare professional.
         </p>
+        </Reveal>
 
         <div className="mt-10 space-y-4">
           {[
@@ -353,54 +357,56 @@ function Index() {
               q: "Is it suitable for hot sleepers?",
               a: "The removable cover uses a breathable knit with a mesh side panel intended to reduce heat build-up. It generally feels cooler than a plain cotton case, but no pillow is truly 'cold' — a cool bedroom still matters.",
             },
-          ].map((item) => (
-            <details key={item.q} className="group rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
+          ].map((item, i) => (
+            <Reveal key={item.q} delay={i * 80}>
+            <details className="group rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
               <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
                 {item.q}
                 <span className="ml-4 text-primary transition-transform group-open:rotate-45">+</span>
               </summary>
               <p className="mt-3 text-sm text-muted-foreground">{item.a}</p>
             </details>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center md:py-20">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <Reveal className="mx-auto max-w-3xl px-6 py-20 text-center sm:px-8 md:py-24">
+          <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
             Ready to see if it's right for you?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/85">
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/90">
             Check current pricing, shipping options and the latest return policy directly on the official product page.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3">
+          <div className="mt-10 flex flex-col items-center gap-4">
             <a
               href={AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener"
-              className="inline-flex items-center justify-center rounded-full bg-background px-8 py-4 text-base font-semibold text-primary shadow-lg transition-all hover:-translate-y-0.5"
+              className="inline-flex w-full max-w-sm items-center justify-center rounded-full bg-background px-8 py-4 text-base font-semibold text-primary shadow-lg transition-all hover:-translate-y-0.5 sm:w-auto"
             >
               See Current Price on Official Page →
             </a>
-            <p className="text-xs text-primary-foreground/70">
-              [See current price on official page] • Affiliate link
+            <p className="text-xs text-primary-foreground/80">
+              Affiliate link — pricing shown on the official page
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-border bg-card">
-        <div className="mx-auto max-w-6xl px-4 py-12">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:px-8">
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <div className="max-w-md">
               <p className="text-sm font-semibold">RestWellReviews</p>
-              <p className="mt-2 text-xs text-muted-foreground">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Independent reviews of sleep products for people looking for straightforward, honest information.
               </p>
             </div>
-            <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
               <a href="#" className="text-muted-foreground hover:text-foreground">Privacy Policy</a>
               <a href="#" className="text-muted-foreground hover:text-foreground">Terms</a>
               <a href="#" className="text-muted-foreground hover:text-foreground">Affiliate Disclosure</a>
@@ -408,7 +414,7 @@ function Index() {
             </nav>
           </div>
 
-          <div className="mt-8 border-t border-border pt-6 text-xs leading-relaxed text-muted-foreground">
+          <div className="mt-10 border-t border-border pt-8 text-xs leading-relaxed text-muted-foreground">
             <p>
               <strong className="text-foreground">Full disclosure:</strong> RestWellReviews is an independent
               review site. We are not the manufacturer, retailer, or an official representative of any product featured
@@ -418,7 +424,7 @@ function Index() {
               the current information on the official product page before purchasing. Content on this site is for
               general informational purposes only and does not constitute medical, health, or professional advice.
             </p>
-            <p className="mt-4">© {new Date().getFullYear()} RestWellReviews. All rights reserved.</p>
+            <p className="mt-6">© {new Date().getFullYear()} RestWellReviews. All rights reserved.</p>
           </div>
         </div>
       </footer>
