@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import pillowAngled from "@/assets/pillow-angled.png.asset.json";
-import pillowLifestyle from "@/assets/pillow-lifestyle.jpg.asset.json";
-import pillowLifestyle2 from "@/assets/pillow-lifestyle-2.jpg.asset.json";
-import pillowLifestyle3 from "@/assets/pillow-lifestyle-3.jpg.asset.json";
-import pillowLifestyle4 from "@/assets/pillow-lifestyle-4.jpg.asset.json";
-import pillowLifestyleNew from "@/assets/pillow-lifestyle-new.jpg.asset.json";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+
+const pillowAngled = { url: "/images/pillow-angled.png" };
+const pillowLifestyle = { url: "/images/pillow-lifestyle.jpg" };
+const pillowLifestyle2 = { url: "/images/pillow-lifestyle-2.jpg" };
+const pillowLifestyle3 = { url: "/images/pillow-lifestyle-3.jpg" };
+const pillowLifestyle4 = { url: "/images/pillow-lifestyle-4.jpg" };
+const pillowLifestyleNew = { url: "/images/pillow-lifestyle-new.jpg" };
 
 function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
