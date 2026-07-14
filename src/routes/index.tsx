@@ -409,10 +409,10 @@ function Index() {
               </p>
             </div>
             <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-foreground">Privacy Policy</a>
-              <a href="#" className="text-muted-foreground hover:text-foreground">Terms</a>
-              <a href="#" className="text-muted-foreground hover:text-foreground">Affiliate Disclosure</a>
-              <a href="#" className="text-muted-foreground hover:text-foreground">Contact</a>
+              <a href="/privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</a>
+              <a href="/terms" className="text-muted-foreground hover:text-foreground">Terms</a>
+              <a href="/disclosure" className="text-muted-foreground hover:text-foreground">Affiliate Disclosure</a>
+              <a href="/contact" className="text-muted-foreground hover:text-foreground">Contact</a>
             </nav>
           </div>
 
