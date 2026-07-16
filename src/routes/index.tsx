@@ -69,6 +69,7 @@ function useMounted() {
 }
 
 function Index() {
+  const mounted = useMounted();
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Disclosure bar */}
