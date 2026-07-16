@@ -161,7 +161,7 @@ function Index() {
                 review is written independently, without input from any brand or manufacturer.
               </p>
               <p className="mt-4 text-xs text-muted-foreground">
-                Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                Last updated: {mounted ? new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) : null}
               </p>
             </Card>
           </Reveal>
