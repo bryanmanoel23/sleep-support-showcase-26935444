@@ -134,6 +134,52 @@ function Index() {
         </div>
       </section>
 
+      {/* Authority / credibility */}
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+        <div className="grid gap-6 md:grid-cols-2">
+          <Reveal>
+            <Card className="h-full">
+              <div className="flex items-start gap-4">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <User size={28} aria-hidden />
+                </span>
+                <div>
+                  <p className="text-lg font-semibold">Sarah Mitchell</p>
+                  <p className="text-sm text-muted-foreground">Sleep Product Reviewer</p>
+                </div>
+              </div>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                Sarah has spent several years testing and writing about sleep products, with a focus on helping people
+                with neck discomfort and sleep-position challenges choose gear with honest, unbiased information. This
+                review is written independently, without input from any brand or manufacturer.
+              </p>
+              <p className="mt-4 text-xs text-muted-foreground">
+                Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+              </p>
+            </Card>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <Card className="h-full">
+              <h3 className="text-lg font-semibold">How We Review</h3>
+              <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                {[
+                  "We evaluate comfort, support, temperature regulation, and perceived durability based on real-world use and manufacturer specs.",
+                  "Our team does not receive free products from the manufacturer or sign exclusivity deals with any brand.",
+                  "Affiliate links are clearly disclosed; they do not influence the review content or recommendations.",
+                  "Ratings and opinions reflect hands-on experience, research, and cross-checking with verified buyer feedback.",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2">
+                    <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Is this right for you */}
       <section id="review" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
         <Reveal className="mx-auto max-w-2xl text-center">
