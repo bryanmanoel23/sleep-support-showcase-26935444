@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { User } from "lucide-react";
 
 const pillowAngled = { url: "/images/pillow-angled.png" };
 const pillowLifestyle = { url: "/images/pillow-lifestyle.jpg" };
