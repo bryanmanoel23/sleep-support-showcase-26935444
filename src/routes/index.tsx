@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { User } from "lucide-react";
+import { Search, Ban, ShieldCheck, CheckCheck } from "lucide-react";
 
 const pillowAngled = { url: "/images/pillow-angled.png" };
 const pillowLifestyle = { url: "/images/pillow-lifestyle.jpg" };
@@ -138,10 +138,10 @@ function Index() {
       <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
         <div className="grid gap-6 md:grid-cols-2">
           <Reveal>
-            <Card className="h-full">
+            <Card className="h-full border-primary/15 bg-primary/[0.02]">
               <div className="flex items-start gap-4">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <User size={28} aria-hidden />
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary text-lg font-semibold text-primary-foreground">
+                  SM
                 </span>
                 <div>
                   <p className="text-lg font-semibold">Sarah Mitchell</p>
@@ -164,14 +164,14 @@ function Index() {
               <h3 className="text-lg font-semibold">How We Review</h3>
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                 {[
-                  "We evaluate comfort, support, temperature regulation, and perceived durability based on real-world use and manufacturer specs.",
-                  "Our team does not receive free products from the manufacturer or sign exclusivity deals with any brand.",
-                  "Affiliate links are clearly disclosed; they do not influence the review content or recommendations.",
-                  "Ratings and opinions reflect hands-on experience, research, and cross-checking with verified buyer feedback.",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2">
-                    <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    <span>{t}</span>
+                  { icon: Search, text: "We evaluate comfort, support, temperature regulation, and perceived durability based on real-world use and manufacturer specs." },
+                  { icon: Ban, text: "Our team does not receive free products from the manufacturer or sign exclusivity deals with any brand." },
+                  { icon: ShieldCheck, text: "Affiliate links are clearly disclosed; they do not influence the review content or recommendations." },
+                  { icon: CheckCheck, text: "Ratings and opinions reflect hands-on experience, research, and cross-checking with verified buyer feedback." },
+                ].map(({ icon: Icon, text }) => (
+                  <li key={text} className="flex items-start gap-3">
+                    <Icon size={16} className="mt-1 shrink-0 text-muted-foreground" aria-hidden />
+                    <span>{text}</span>
                   </li>
                 ))}
               </ul>
