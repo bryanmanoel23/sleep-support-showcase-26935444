@@ -62,6 +62,12 @@ function Card({ children, className = "" }: { children: React.ReactNode; classNa
   );
 }
 
+function useMounted() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted;
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
